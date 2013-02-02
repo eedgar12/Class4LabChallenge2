@@ -4,6 +4,7 @@
  */
 package web.servlets;
 
+import CalculatorModels.RectangleCalculator;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -78,10 +79,9 @@ public class RectangleServlet extends HttpServlet {
             throws ServletException, IOException {
         double w = Double.parseDouble(request.getParameter("width"));
         double l = Double.parseDouble(request.getParameter("length"));
-        double area = (w * l);
-        String result = "The area of the rectangle is " + area;
+        RectangleCalculator rc = new RectangleCalculator(l, w);
         
-        request.setAttribute("rectangleResult", result);
+        request.setAttribute("rectangleResult", rc.getResultsMessage());
         RequestDispatcher view = request.getRequestDispatcher("index.jsp");
         view.forward(request, response);
       //  processRequest(request, response);

@@ -4,6 +4,7 @@
  */
 package web.servlets;
 
+import CalculatorModels.CircleCalculator;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.*;
@@ -77,13 +78,11 @@ private final Logger logger =
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        double pi = 3.14159265359;
+       
         double rad = Double.parseDouble(request.getParameter("radius"));
-        double area = pi * (rad * rad);
-        String result = ("The area of the circle is " + area);
+        CircleCalculator cc = new CircleCalculator(rad);
 
-        request.setAttribute("circleResult", result);
+        request.setAttribute("circleResult", cc.getResultsMessage());
         RequestDispatcher view = request.getRequestDispatcher("index.jsp");
         view.forward(request, response);
     }
