@@ -16,6 +16,7 @@
             }
             
             function valRectangle(){
+                //can use document.getElementById("id");
                 var w = document.forms["rectangle"]["width"].value;
                 var l = document.forms["rectangle"]["length"].value;
                 

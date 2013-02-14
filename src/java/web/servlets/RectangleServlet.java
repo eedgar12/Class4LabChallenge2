@@ -49,7 +49,6 @@ public class RectangleServlet extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP
      * <code>GET</code> method.
@@ -77,6 +76,7 @@ public class RectangleServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         double w = Double.parseDouble(request.getParameter("width"));
         double l = Double.parseDouble(request.getParameter("length"));
         RectangleCalculator rc = new RectangleCalculator(l, w);
@@ -84,7 +84,6 @@ public class RectangleServlet extends HttpServlet {
         request.setAttribute("rectangleResult", rc.getResultsMessage());
         RequestDispatcher view = request.getRequestDispatcher("index.jsp");
         view.forward(request, response);
-      //  processRequest(request, response);
     }
 
     /**
@@ -95,5 +94,5 @@ public class RectangleServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 }
