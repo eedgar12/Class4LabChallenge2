@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : Feb 2, 2013, 3:43:57 PM
-    Author     : Toshiba laptop
+    Author     : Emma Edgar
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Enter numbers to calculate</title>
         <script type="text/javascript">
             function isNumber(n) {
                 return !isNaN(parseFloat(n)) && isFinite(n);
